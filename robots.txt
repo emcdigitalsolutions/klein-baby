@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /changelog.html
+
+Sitemap: https://www.kleinbaby.it/sitemap.xml
