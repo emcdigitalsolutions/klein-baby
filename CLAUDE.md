@@ -189,7 +189,7 @@ kleinbaby/
   - Test verificati: gift card test mode OK, merge settings OK (Stripe non cancella SMTP/Branding), API update tenant OK
 - **Upgrade piano Klein Baby**: da FREE a STARTER (1 negozio, 3 utenti, 500 prodotti) via API superadmin
 - **Superadmin StockFlow**: email=superadmin@stockflow.it, password=admin123
-- **Portfolio personale** (repo: C:\workspace\enricomariacaruso, sito: www.enricomariacaruso.it):
+- **Portfolio personale** (repo: C:\workspace\enricomariacaruso, sito: www.emcdigitalsolutions.it):
   - Aggiunto progetto "Klein Baby" con screenshot da www.kleinbaby.it e link al sito
   - Sostituito "Gestionale Magazzino" (mockup HTML) con "StockFlow ERP" con screenshot reale, due link (sito prodotto + app demo), descrizione aggiornata SaaS multi-tenant
   - Rimosso CSS mockup-gestionale non piu necessario
