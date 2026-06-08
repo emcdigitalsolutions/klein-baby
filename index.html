@@ -74,6 +74,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/gift-card.css">
     <link rel="stylesheet" href="css/cookie-consent.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Cosa vendete?","acceptedAnswer":{"@type":"Answer","text":"Abbigliamento e articoli per neonati e bambini: tutto il necessario per i più piccoli, con marchi selezionati."}},{"@type":"Question","name":"Dove si trova il negozio?","acceptedAnswer":{"@type":"Answer","text":"A Campobello di Licata (AG). Contattaci per l’indirizzo e gli orari di apertura."}},{"@type":"Question","name":"Avete idee regalo e liste nascita?","acceptedAnswer":{"@type":"Answer","text":"Sì, ti aiutiamo a scegliere il regalo perfetto e a creare la tua lista nascita."}},{"@type":"Question","name":"Posso verificare la disponibilità di un prodotto?","acceptedAnswer":{"@type":"Answer","text":"Certo: scrivici e controlliamo subito disponibilità, taglie e modelli."}},{"@type":"Question","name":"Trattate prodotti per la prima infanzia?","acceptedAnswer":{"@type":"Answer","text":"Sì, dall’abbigliamento agli accessori per neonati, pensati per comfort e sicurezza."}},{"@type":"Question","name":"Come posso contattarvi?","acceptedAnswer":{"@type":"Answer","text":"Passa a trovarci in negozio oppure scrivici: siamo felici di aiutarti."}}]}</script>
 </head>
 <body>
     <!-- Preloader -->
@@ -485,7 +486,37 @@
     </section>
 
     <!-- Footer -->
-    <footer id="footer">
+    
+<!-- FAQ (EMC) -->
+<section class="emcfaq-sec" id="faq">
+  <div class="emcfaq-wrap">
+    <p class="emcfaq-eye">FAQ</p>
+    <h2 class="emcfaq-title">Domande frequenti</h2>
+    <div class="emcfaq-list">
+      <details><summary>Cosa vendete?</summary><p>Abbigliamento e articoli per neonati e bambini: tutto il necessario per i più piccoli, con marchi selezionati.</p></details>
+      <details><summary>Dove si trova il negozio?</summary><p>A Campobello di Licata (AG). Contattaci per l’indirizzo e gli orari di apertura.</p></details>
+      <details><summary>Avete idee regalo e liste nascita?</summary><p>Sì, ti aiutiamo a scegliere il regalo perfetto e a creare la tua lista nascita.</p></details>
+      <details><summary>Posso verificare la disponibilità di un prodotto?</summary><p>Certo: scrivici e controlliamo subito disponibilità, taglie e modelli.</p></details>
+      <details><summary>Trattate prodotti per la prima infanzia?</summary><p>Sì, dall’abbigliamento agli accessori per neonati, pensati per comfort e sicurezza.</p></details>
+      <details><summary>Come posso contattarvi?</summary><p>Passa a trovarci in negozio oppure scrivici: siamo felici di aiutarti.</p></details>
+    </div>
+  </div>
+</section>
+<style>
+.emcfaq-sec{background:#fff5fa;padding:72px 20px;font-family:'Nunito',sans-serif}
+.emcfaq-wrap{max-width:820px;margin:0 auto}
+.emcfaq-eye{text-align:center;text-transform:uppercase;letter-spacing:.2em;font-size:13px;font-weight:700;color:#b00057;margin:0 0 8px}
+.emcfaq-title{text-align:center;font-family:'Fredoka',sans-serif;font-size:34px;color:#3a2e34;margin:0 0 30px}
+.emcfaq-list details{background:#ffffff;border:1px solid #f6dce8;border-radius:14px;margin-bottom:12px;padding:0 22px}
+.emcfaq-list summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:700;color:#3a2e34;display:flex;justify-content:space-between;gap:14px;align-items:center;font-size:17px}
+.emcfaq-list summary::-webkit-details-marker{display:none}
+.emcfaq-list summary::after{content:"+";font-size:24px;font-weight:400;color:#D4006A;transition:.2s;flex-shrink:0}
+.emcfaq-list details[open] summary::after{transform:rotate(45deg)}
+.emcfaq-list details p{padding:0 0 18px;margin:0;color:#7a6b72;line-height:1.65}
+@media(max-width:600px){.emcfaq-title{font-size:27px}}
+</style>
+
+<footer id="footer">
         <div class="footer-top">
             <div class="container">
                 <div class="footer-grid">
