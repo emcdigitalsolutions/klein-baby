@@ -151,44 +151,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // === Contact Form Handler ===
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const message = document.getElementById('message').value.trim();
-
-            if (!name || !email || !message) return;
-
-            const btn = contactForm.querySelector('button[type="submit"]');
-            const originalHTML = btn.innerHTML;
-            btn.disabled = true;
-            btn.innerHTML = '<span>Invio in corso...</span> <i class="fas fa-spinner fa-spin"></i>';
-
-            // Build mailto link
-            const subject = `Richiesta informazioni da ${name}`;
-            const body = `Nome: ${name}\nEmail: ${email}${phone ? '\nTelefono: ' + phone : ''}\n\nMessaggio:\n${message}`;
-            const mailtoURL = `mailto:info@kleinbaby.it?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-            // Open user's email client
-            btn.innerHTML = '<span>Apertura email...</span> <i class="fas fa-envelope"></i>';
-            setTimeout(() => {
-                window.location.href = mailtoURL;
-                btn.innerHTML = '<span>Messaggio Inviato!</span> <i class="fas fa-check"></i>';
-                btn.style.background = '#2d8a4e';
-                contactForm.reset();
-
-                setTimeout(() => {
-                    btn.innerHTML = originalHTML;
-                    btn.style.background = '';
-                    btn.disabled = false;
-                }, 3000);
-            }, 500);
-        });
-    }
+    // NB: il gestore del form contatti e' in uno <script> ISOLATO in fondo a
+    // index.html (invio reale via Apps Script EMC), cosi' un eventuale errore
+    // qui non puo' impedirne l'aggancio.
 
     // === Dynamic News from JSON ===
     const newsGrid = document.getElementById('news-grid');
