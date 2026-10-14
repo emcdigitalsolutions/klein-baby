@@ -479,9 +479,10 @@
                             <textarea id="message" rows="4" placeholder="Il tuo messaggio..." required></textarea>
                             <label for="message">Messaggio</label>
                         </div>
+                        <p style="font-size:.84rem;line-height:1.5;opacity:.8;margin:0 0 10px">Premendo il pulsante si apre il tuo programma di posta con il messaggio già pronto: controllalo e invialo tu. Il sito non invia né conserva i tuoi dati.</p>
                         <button type="submit" class="btn btn-primary btn-block">
-                            <span>Invia Messaggio</span>
-                            <i class="fas fa-paper-plane"></i>
+                            <span>Scrivi con la tua email</span>
+                            <i class="fas fa-envelope"></i>
                         </button>
                         <div class="form-note" id="formNote"></div>
                     </form>
@@ -641,9 +642,9 @@
         var form=document.getElementById('contactForm');
         if(!form) return;
         var note=document.getElementById('formNote');
-        var API='https://script.google.com/macros/s/AKfycbxLCgN0-mHN86Dk37a5m-p2A3DgMjc8b__aCO_9oBA_amLUn5MlipebKalo5qNIoSWl/exec';
-        var OK='Grazie! Abbiamo ricevuto il tuo messaggio, ti ricontatteremo al più presto.';
-        var ERR='Ops, qualcosa è andato storto. Riprova o scrivici su WhatsApp.';
+        // Nessun server intermedio: il modulo apre il programma di posta dell'utente con il messaggio pronto.
+        var TO='info@kleinbaby.it';
+        var OK='Si è aperto il tuo programma di posta con il messaggio pronto: controllalo e premi Invia. Se non si apre nulla, scrivici a '+TO+' o su WhatsApp.';
         var REQ='Compila i campi obbligatori (nome, email e messaggio).';
         function val(id){var el=document.getElementById(id);return el?el.value.trim():'';}
         function showToast(msg,type){var t=document.getElementById('toast');if(!t)return;t.textContent=msg;t.className=type;setTimeout(function(){t.classList.add('show');},10);clearTimeout(t._t);t._t=setTimeout(function(){t.classList.remove('show');},6000);}
@@ -656,11 +657,9 @@
           if(honey&&honey.value) return;
           var name=val('name'), email=val('email'), message=val('message');
           if(!name||!email||!message){showNote('err',REQ);return;}
-          if(btn){btn.disabled=true;btn.innerHTML='<span>Invio in corso...</span> <i class="fas fa-spinner fa-spin"></i>';}
-          fetch(API,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({site:'kleinbaby',name:name,email:email,phone:val('phone'),message:message})})
-          .then(function(){showNote('ok',OK);form.reset();})
-          .catch(function(){showNote('err',ERR);})
-          .finally(function(){if(btn){btn.disabled=false;btn.innerHTML=btnLabel;}});
+          var corpo=message+'\n\n— '+name+'\nEmail: '+email+(val('phone')?'\nTelefono: '+val('phone'):'');
+          window.location.href='mailto:info@kleinbaby.it?subject='+encodeURIComponent('Richiesta dal sito — '+name)+'&body='+encodeURIComponent(corpo);
+          showNote('ok',OK);
         });
       }
       if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',init);}else{init();}
